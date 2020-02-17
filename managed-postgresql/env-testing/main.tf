@@ -36,9 +36,9 @@ module "managed_pgsql_dev_testing" {
     env        = "testing",
     deployment = "terraform"
   }
-  environment            = "PRESTABLE"
-  cfg_resource_preset_id = "b2.medium"
-  cfg_disk_size          = 50
+  environment        = "PRESTABLE"
+  resource_preset_id = "b2.medium"
+  disk_size          = 50
 
   hosts = [
     {
@@ -60,9 +60,9 @@ module "managed_pgsql_qa_testing" {
     env        = "testing",
     deployment = "terraform"
   }
-  environment            = "PRESTABLE"
-  cfg_resource_preset_id = "b2.medium"
-  cfg_disk_size          = 50
+  environment        = "PRESTABLE"
+  resource_preset_id = "b2.medium"
+  disk_size          = 50
 
   hosts = [
     {

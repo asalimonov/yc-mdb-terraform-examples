@@ -36,9 +36,9 @@ module "managed_pgsql_staging" {
     env        = "staging",
     deployment = "terraform"
   }
-  environment            = "PRODUCTION"
-  cfg_resource_preset_id = "s2.micro"
-  cfg_disk_size          = 50
+  environment        = "PRODUCTION"
+  resource_preset_id = "s2.micro"
+  disk_size          = 50
 
   hosts = [
     {

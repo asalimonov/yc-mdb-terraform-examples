@@ -18,25 +18,25 @@ variable "environment" {
   description = "PRODUCTION or PRESTABLE. Prestable gets updates before production environment"
 }
 
-variable "cfg_version" {
+variable "database_version" {
   type        = string
   default     = "12"
   description = "Version of PostgreSQL"
 }
 
-variable "cfg_resource_preset_id" {
+variable "resource_preset_id" {
   type        = string
   default     = "s2.small"
-  description = "Id of resource preset which means count of vCPU and amount of RAM per host"
+  description = "Id of a resource preset which means count of vCPUs and amount of RAM per host"
 }
 
-variable "cfg_disk_size" {
+variable "disk_size" {
   type        = number
   default     = 100
   description = "Disk size in GiB"
 }
 
-variable "cfg_disk_type_id" {
+variable "disk_type_id" {
   type        = string
   default     = "network-ssd"
   description = "Disk type: 'network-ssd', 'network-hdd', 'local-ssd'"
@@ -114,11 +114,11 @@ resource "yandex_mdb_postgresql_cluster" "managed_postgresql" {
   environment = var.environment
 
   config {
-    version = var.cfg_version
+    version = var.database_version
     resources {
-      resource_preset_id = var.cfg_resource_preset_id
-      disk_size          = var.cfg_disk_size
-      disk_type_id       = var.cfg_disk_type_id
+      resource_preset_id = var.resource_preset_id
+      disk_size          = var.disk_size
+      disk_type_id       = var.disk_type_id
     }
   }
 
