@@ -38,6 +38,9 @@ module "managed_pgsql_prod" {
   }
   environment = "PRODUCTION"
 
+  cfg_resource_preset_id = "s2.small"
+  cfg_disk_size          = 100 #GiB
+
   hosts = [
     {
       zone             = "ru-central1-a",

@@ -18,6 +18,7 @@ output "cluster_users" {
 output "cluster_users_passwords" {
   value = "${zipmap(yandex_mdb_postgresql_cluster.managed_postgresql.user.*.name,
   yandex_mdb_postgresql_cluster.managed_postgresql.user.*.password)}"
+  sensitive = true
 }
 
 output "cluster_databases" {
