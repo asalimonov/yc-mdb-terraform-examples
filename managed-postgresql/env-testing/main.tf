@@ -87,7 +87,8 @@ output "managed_pgsql_dev_testing_cluster_users" {
 }
 
 output "managed_pgsql_dev_testing_cluster_users_passwords" {
-  value = module.managed_pgsql_dev_testing.cluster_users_passwords
+  value     = module.managed_pgsql_dev_testing.cluster_users_passwords
+  sensitive = true
 }
 
 output "managed_pgsql_dev_testing_cluster_fips" {
@@ -111,7 +112,8 @@ output "managed_pgsql_qa_testing_cluster_users" {
 }
 
 output "managed_pgsql_qa_testing_cluster_users_passwords" {
-  value = module.managed_pgsql_qa_testing.cluster_users_passwords
+  value     = module.managed_pgsql_qa_testing.cluster_users_passwords
+  sensitive = true
 }
 
 output "managed_pgsql_qa_testing_cluster_fips" {

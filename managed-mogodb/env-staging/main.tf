@@ -18,7 +18,7 @@ module "vpc" {
     "staging-subnet-b" : {
       zone           = "ru-central1-b"
       v4_cidr_blocks = ["192.168.11.0/24"]
-    },
+    }
     "staging-subnet-c" : {
       zone           = "ru-central1-c"
       v4_cidr_blocks = ["192.168.12.0/24"]
@@ -26,19 +26,20 @@ module "vpc" {
   }
 }
 
-module "managed_pgsql_staging" {
+module "managed_mongdb_staging" {
 
-  source       = "../modules/mdb-postgresql"
-  cluster_name = "staging"
+  source       = "../modules/mdb-mongodb"
+  cluster_name = "staging_mongodb"
   network_id   = module.vpc.vpc_network_id
-  description  = "Main staging PostgreSQL database"
+  description  = "Main staging MongoDB database"
   labels = {
-    env        = "staging",
+    env        = "staging"
     deployment = "terraform"
   }
-  environment        = "PRODUCTION"
+  environment = "PRODUCTION"
+
   resource_preset_id = "s2.micro"
-  disk_size          = 50
+  disk_size          = 50 #GiB
 
   hosts = [
     {
@@ -55,27 +56,27 @@ module "managed_pgsql_staging" {
 
 }
 
-output "managed_pgsql_staging_cluster_id" {
-  value = module.managed_pgsql_staging.cluster_id
+output "managed_mongdb_staging_cluster_id" {
+  value = module.managed_mongdb_staging.cluster_id
 }
 
-output "managed_pgsql_staging_cluster_fqdns" {
-  value = module.managed_pgsql_staging.cluster_hosts_fqdns
+output "managed_mongdb_staging_cluster_fqdns" {
+  value = module.managed_mongdb_staging.cluster_hosts_fqdns
 }
 
-output "managed_pgsql_staging_cluster_users" {
-  value = module.managed_pgsql_staging.cluster_users
+output "managed_mongdb_staging_cluster_users" {
+  value = module.managed_mongdb_staging.cluster_users
 }
 
-output "managed_pgsql_staging_cluster_users_passwords" {
-  value     = module.managed_pgsql_staging.cluster_users_passwords
+output "managed_mongdb_staging_cluster_users_passwords" {
+  value     = module.managed_mongdb_staging.cluster_users_passwords
   sensitive = true
 }
 
-output "managed_pgsql_staging_cluster_fips" {
-  value = module.managed_pgsql_staging.cluster_hosts_fips
+output "managed_mongdb_staging_cluster_fips" {
+  value = module.managed_mongdb_staging.cluster_hosts_fips
 }
 
-output "managed_pgsql_staging_cluster_databases" {
-  value = module.managed_pgsql_staging.cluster_databases
+output "managed_mongdb_staging_cluster_databases" {
+  value = module.managed_mongdb_staging.cluster_databases
 }
