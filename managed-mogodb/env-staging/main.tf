@@ -51,6 +51,11 @@ module "managed_mongdb_staging" {
       zone             = "ru-central1-b",
       subnet_id        = module.vpc.subnet_ids_by_names["staging-subnet-b"]
       assign_public_ip = false
+    },
+    {
+      zone             = "ru-central1-c",
+      subnet_id        = module.vpc.subnet_ids_by_names["staging-subnet-c"]
+      assign_public_ip = false
     }
   ]
 

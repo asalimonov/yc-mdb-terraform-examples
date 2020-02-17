@@ -1,4 +1,4 @@
-# Example of deployment of Yandex.Cloud Managed MongoDB 
+# Deployment of Yandex.Cloud Managed MongoDB via Terraform
 
 ## Concept
 
@@ -10,7 +10,6 @@ For example, developers can have privileges to redeploy, change configuration,
 deploy additional clusters and VMs in testing environment, but only leads and 
 duty engineers can deploy and update configuration of nets, clusters, virtual
 machines in production environment.
-
 
 Here are keys features of environments:
 
@@ -45,6 +44,6 @@ Here are keys features of environments:
 1. Open `terraform.tfvars` and specify `yc_cloud_id`, `yc_folder_id`, `yc_oauth_token`
 1. [Install Terraform](https://www.terraform.io/intro/getting-started/install.html)
 1. Run `terraform init`
-1. Run `terraform plan` and check printed diff.
+1. Run `terraform plan` and check printed diff
 1. Run `terraform apply` and follow instructions
-1. Find username and it's password in `terraform.tfstate`
+1. Find username and its password in `terraform.tfstate`

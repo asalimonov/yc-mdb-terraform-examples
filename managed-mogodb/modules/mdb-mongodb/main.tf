@@ -49,7 +49,6 @@ variable "labels" {
   }
 }
 
-
 variable "users" {
   type = list(object(
     {
@@ -114,12 +113,12 @@ resource "yandex_mdb_mongodb_cluster" "managed_mongodb" {
   cluster_config {
     version = var.database_version
   }
+
   resources {
     resource_preset_id = var.resource_preset_id
     disk_size           = var.disk_size
     disk_type_id        = var.disk_type_id
   }
-
 
   dynamic "user" {
     for_each = var.users
@@ -151,5 +150,4 @@ resource "yandex_mdb_mongodb_cluster" "managed_mongodb" {
       assign_public_ip = host.value.assign_public_ip
     }
   }
-
 }

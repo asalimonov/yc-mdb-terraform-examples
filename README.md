@@ -3,13 +3,13 @@
 Set of examples how to deploy production, staging and testing environments with
 using Terraform.
 
-# These Managed services are supported:
+## Supported managed services
 
-* [Managed Service for PostgreSQL]()
-* [Managed Service for MySQL]()
-* [Managed Service for ClickHouse]()
-* [Managed Service for MongoDB]()
-* [Managed Service for Redis]()
+* [Managed Service for PostgreSQL](https://cloud.yandex.ru/services/managed-postgresql)
+* [Managed Service for MySQL](https://cloud.yandex.ru/services/managed-mysql)
+* [Managed Service for ClickHouse](https://cloud.yandex.ru/services/managed-clickhouse)
+* [Managed Service for MongoDB](https://cloud.yandex.ru/services/managed-mongodb)
+* [Managed Service for Redis](https://cloud.yandex.ru/services/managed-redis)
 
 Each root Terraform module doesn't have dependencies but the following modules
 are recommended for using:
@@ -20,5 +20,3 @@ are recommended for using:
 ## Terraform versions
 
 Terraform 0.12. Pin module version to `~> 0.29`.
-
-
