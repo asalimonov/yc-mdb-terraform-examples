@@ -27,7 +27,7 @@ Here are keys features of environments:
 
 ### Staging
 
-* High available Managed MongoDB cluster with 2 nodes in 2 diffrenet zones.
+* High available Managed MongoDB cluster with 3 nodes in 3 diffrenet zones.
 * 50GiB disk size for each host
 * 2 cores and 8 GiB of RAM for each host (s2.micro)
 
