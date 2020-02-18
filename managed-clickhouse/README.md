@@ -21,7 +21,7 @@ Here are keys features of environments:
 
 ### Production
 
-* High available Managed ClickHouse cluster with 3 nodes in 3 diffrenet zones, plus 3 ZooKeeper hosts in the different zones too.
+* High available Managed ClickHouse cluster with 2 nodes in 2 diffrenet zones, plus 3 ZooKeeper hosts in the different zones too.
 * 500GiB disk size for each ClickHouse host
 * 4 cores and 16 GiB of RAM for each ClickHouse host (s2.small)
 
