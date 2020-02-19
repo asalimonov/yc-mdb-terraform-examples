@@ -1,5 +1,5 @@
 provider "yandex" {
-  version   = "~> 0.29"
+  version   = "~> 0.31"
   token     = var.yc_oauth_token
   cloud_id  = var.yc_cloud_id
   folder_id = var.yc_folder_id
@@ -26,12 +26,12 @@ module "vpc" {
   }
 }
 
-module "managed_pgsql_prod" {
+module "managed_mysql_prod" {
 
-  source       = "../modules/mdb-postgresql"
+  source       = "../modules/mdb-mysql"
   cluster_name = "prod"
   network_id   = module.vpc.vpc_network_id
-  description  = "Main production PostgreSQL database"
+  description  = "Main production MySQL database"
   labels = {
     env        = "prod"
     deployment = "terraform"
@@ -61,27 +61,27 @@ module "managed_pgsql_prod" {
 
 }
 
-output "managed_pgsql_prod_cluster_id" {
-  value = module.managed_pgsql_prod.cluster_id
+output "managed_mysql_prod_cluster_id" {
+  value = module.managed_mysql_prod.cluster_id
 }
 
-output "managed_pgsql_prod_cluster_fqdns" {
-  value = module.managed_pgsql_prod.cluster_hosts_fqdns
+output "managed_mysql_prod_cluster_fqdns" {
+  value = module.managed_mysql_prod.cluster_hosts_fqdns
 }
 
-output "managed_pgsql_prod_cluster_users" {
-  value = module.managed_pgsql_prod.cluster_users
+output "managed_mysql_prod_cluster_users" {
+  value = module.managed_mysql_prod.cluster_users
 }
 
-output "managed_pgsql_prod_cluster_users_passwords" {
-  value     = module.managed_pgsql_prod.cluster_users_passwords
+output "managed_mysql_prod_cluster_users_passwords" {
+  value     = module.managed_mysql_prod.cluster_users_passwords
   sensitive = true
 }
 
-output "managed_pgsql_prod_cluster_fips" {
-  value = module.managed_pgsql_prod.cluster_hosts_fips
+output "managed_mysql_prod_cluster_fips" {
+  value = module.managed_mysql_prod.cluster_hosts_fips
 }
 
-output "managed_pgsql_prod_cluster_databases" {
-  value = module.managed_pgsql_prod.cluster_databases
+output "managed_mysql_prod_cluster_databases" {
+  value = module.managed_mysql_prod.cluster_databases
 }

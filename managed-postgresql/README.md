@@ -9,9 +9,9 @@ Each environment can be deployed in diffrenet folders to separate users permissi
 For example, developers can have privileges to redeploy, change configuration,
 deploy additional clusters and VMs in testing environment, but only leads and 
 duty engineers can deploy and update configuration of nets, clusters, virtual
-machines in production environment.
+machines in the production environment.
 
-Here are keys features of environments:
+Here are key features of environments:
 
 ### Common
 

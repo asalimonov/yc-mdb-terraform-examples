@@ -1,4 +1,4 @@
-# Deployment of Yandex.Cloud Managed MongoDB via Terraform
+# Deployment of Yandex.Cloud Managed MySQL via Terraform
 
 ## Concept
 
@@ -21,13 +21,13 @@ Here are key features of environments:
 
 ### Production
 
-* High available Managed MongoDB cluster with 3 nodes in 3 diffrenet zones.
+* High available Managed MySQL cluster with 3 nodes in 3 diffrenet zones.
 * 100GiB disk size for each host
 * 4 cores and 16 GiB of RAM for each host (s2.small)
 
 ### Staging
 
-* High available Managed MongoDB cluster with 3 nodes in 3 diffrenet zones.
+* High available Managed MySQL cluster with 2 nodes in 2 diffrenet zones.
 * 50GiB disk size for each host
 * 2 cores and 8 GiB of RAM for each host (s2.micro)
 
@@ -39,7 +39,7 @@ Here are key features of environments:
 
 ## Usage
 
-1. Open terminal and go to environment folder 
+1. Open terminal and go to environment folder
 1. Create a copy of `terraform.tfvars.example` file and rename it to `terraform.tfvars`
 1. Open `terraform.tfvars` and specify `yc_cloud_id`, `yc_folder_id`, `yc_oauth_token`
 1. [Install Terraform](https://www.terraform.io/intro/getting-started/install.html)
