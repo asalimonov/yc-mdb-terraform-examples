@@ -116,15 +116,15 @@ resource "yandex_mdb_mongodb_cluster" "managed_mongodb" {
 
   resources {
     resource_preset_id = var.resource_preset_id
-    disk_size           = var.disk_size
-    disk_type_id        = var.disk_type_id
+    disk_size          = var.disk_size
+    disk_type_id       = var.disk_type_id
   }
 
   dynamic "user" {
     for_each = var.users
     content {
       name     = user.value.name
-      password = user.value.password != "" || user.value.password == null ? user.value.password : random_password.pwd.result
+      password = user.value.password == "" || user.value.password == null ? random_password.pwd.result : user.value.password
 
       dynamic "permission" {
         for_each = var.user_permissions[user.value.name]

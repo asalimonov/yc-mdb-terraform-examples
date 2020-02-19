@@ -182,7 +182,7 @@ resource "yandex_mdb_clickhouse_cluster" "managed_clickhouse" {
     for_each = var.users
     content {
       name     = user.value.name
-      password = user.value.password != "" || user.value.password == null ? user.value.password : random_password.pwd.result
+      password = user.value.password == "" || user.value.password == null ? random_password.pwd.result : user.value.password
 
       dynamic "permission" {
         for_each = var.user_permissions[user.value.name]
