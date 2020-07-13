@@ -10,6 +10,7 @@ using Terraform.
 * [Managed Service for ClickHouse](https://cloud.yandex.ru/services/managed-clickhouse)
 * [Managed Service for MongoDB](https://cloud.yandex.ru/services/managed-mongodb)
 * [Managed Service for Redis](https://cloud.yandex.ru/services/managed-redis)
+* [Yandex Data Proc](https://cloud.yandex.ru/services/data-proc)
 
 Each root Terraform module doesn't have dependencies but the following modules
 are recommended for using:
